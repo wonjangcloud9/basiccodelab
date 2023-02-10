@@ -16,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.basicscodelab.ui.theme.BasicsCodelabTheme
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 
 class MainActivity : ComponentActivity() {
@@ -73,7 +74,8 @@ fun DefaultPreview() {
 fun MyApp(
     modifier: Modifier = Modifier,
 ) {
-    var shouldShowOnboarding by remember { mutableStateOf(true) }
+    var shouldShowOnboarding by rememberSaveable { mutableStateOf(true) }
+
 
     Surface(modifier) {
         if (shouldShowOnboarding) { // Where does this come from?
